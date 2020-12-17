@@ -4,6 +4,8 @@
 \newcommand{\actuality}{\pdfbookmark[1]{Актуальность}{actuality}\underline{\textbf{\actualityTXT}}}
 \newcommand{\progress}{\pdfbookmark[1]{Разработанность темы}{progress}\underline{\textbf{\progressTXT}}}
 \newcommand{\aim}{\pdfbookmark[1]{Цели}{aim}\underline{{\textbf\aimTXT}}}
+\newcommand{\object}{\pdfbookmark[1]{Объектом исследования}{object}\underline{\textbf{\objectTXT}}}
+\newcommand{\objective}{\pdfbookmark[1]{Предметом исследования}{objective}\underline{\textbf{\objectiveTXT}}}
 \newcommand{\tasks}{\pdfbookmark[1]{Задачи}{tasks}\underline{\textbf{\tasksTXT}}}
 \newcommand{\aimtasks}{\pdfbookmark[1]{Цели и задачи}{aimtasks}\aimtasksTXT}
 \newcommand{\novelty}{\pdfbookmark[1]{Научная новизна}{novelty}\underline{\textbf{\noveltyTXT}}}
@@ -26,16 +28,9 @@
 
 \pdfbookmark{Содержание работы}{description}                          % Закладка pdf
 \section*{Содержание работы}
-Во \underline{\textbf{введении}} обосновывается актуальность
-исследований, проводимых в~рамках данной диссертационной работы,
-приводится обзор научной литературы по~изучаемой проблеме,
-формулируется цель, ставятся задачи работы, излагается научная новизна
-и практическая значимость представляемой работы. В~последующих главах
-сначала описывается общий принцип, позволяющий \dots, а~потом идёт
-апробация на частных примерах: \dots  и~\dots.
+Во \underline{\textbf{введении}} обосновывается актуальность исследований, проводимых в~рамках данной диссертационной работы, формулируется цель, ставятся задачи работы, излагается научная новизна и практическая значимость представляемой работы, приводится краткое содержание разделов диссертационной работы.
 
-
-\underline{\textbf{Первая глава}} посвящена \dots
+В \underline{\textbf{первой главе}} подробно рассматривается структура распределенной системы радиочастотной идентификации транспорта, описываются основные задачи и проблемы, возникающие при ее построении, анализе производительности и поиске способов увеличения эффективности. Далее приводится обзор современных исследований в областях анализа производительности, способов применения и разработки систем радиочастотной идентификации, методов исследования производительности беспроводных сетей, включая различные сети массового обслуживания. После обзора приводится краткое описание технологии UHF RFID стандарта EPC Class 1 Generation 2 и протоколов беспроводной связи семейства IEEE 802.11, а также радиорелейных линий.
 
 картинку можно добавить так:
 \begin{figure}[ht]
@@ -65,7 +60,7 @@
 \verb!Synopsis/setup.tex! необходимо присвоить положительное значение
 счётчику \verb!\setcounter{usefootcite}{1}!. В таком случае ссылки на
 работы других авторов будут подстрочными.
-Изложенные в третьей главе результаты опубликованы в~\cite{vakbib1, vakbib2}.
+% Изложенные в третьей главе результаты опубликованы в~\cite{vakbib1, vakbib2}.
 Использование подстрочных ссылок внутри таблиц может вызывать проблемы.
 
 В \underline{\textbf{четвертой главе}} приведено описание
@@ -94,28 +89,50 @@
   %  * Если цитировать каждый источник отдельной командой --- найти некоторые ошибки будет проще.
   %
   %% authorvak
-  \nocite{vakbib1}%
-  \nocite{vakbib2}%
+  \nocite{WINET_TCOMM2015}
+  \nocite{QS_JPU2013}
+  \nocite{QS_JITCS2013}
+  \nocite{QS_TCOMM2012}
+
+  %% authorwos - journals
+  \nocite{RFID_JRFID2017}
+  \nocite{WINET_IJPAM2016}
+    
+  % \nocite{vakbib1}%
+  % \nocite{vakbib2}%
   %
   %% authorwos
-  \nocite{wosbib1}%
+  % \nocite{wosbib1}%
+  \nocite{QS_ICAAPSP2020}
+  \nocite{QS_ITMM2019}
+  \nocite{RFID_IEEERFID2018}
+  \nocite{RFID_SYNCHROINFO2018}
+  \nocite{RFID_IEEERFID2017}
+  \nocite{QS_AICT2017}
+  \nocite{QS_ITMM2017}
+  \nocite{QS_ITMM2016}
+  \nocite{QS_DCCN2016_CCIS}
+  \nocite{RFID_DCCN2016_CCIS}
+  \nocite{RFIDCTRL_NETS2CARS2014}
+  \nocite{RFIDTA2012}
+
   %
   %% authorscopus
-  \nocite{scbib1}%
+  % \nocite{scbib1}%
   %
   %% authorpathent
-  \nocite{patbib1}%
+  % \nocite{patbib1}%
   %
   %% authorprogram
-  \nocite{progbib1}%
+  % \nocite{progbib1}%
   %
   %% authorconf
-  \nocite{confbib1}%
-  \nocite{confbib2}%
+  % \nocite{confbib1}%
+  % \nocite{confbib2}%
   %
   %% authorother
-  \nocite{bib1}%
-  \nocite{bib2}%
+  % \nocite{bib1}%
+  % \nocite{bib2}%
 
   \ifnumgreater{\value{usefootcite}}{0}{
     \begin{refcontext}[labelprefix={}]
