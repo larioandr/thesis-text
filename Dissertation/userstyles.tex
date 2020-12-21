@@ -309,3 +309,20 @@
 \renewcommand{\chi}{\upchi}
 \renewcommand{\psi}{\uppsi}
 \renewcommand{\omega}{\upomega}
+
+%%% Theorem styles, definitions, etc.
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{theorem}{Теорема}[section]
+\newtheorem{proposition}{Утверждение}[section]
+\newtheorem{lemma}{Лемма}[section]
+ 
+\theoremstyle{definition} % "Определение"
+\newtheorem{corollary}{Следствие}[theorem]
+\newtheorem{propcorollary}{Следствие}[proposition]
+\newtheorem{problem}{Задача}[section]
+\newtheorem{definition}{Определение}[section]
+ 
+\theoremstyle{remark} % "Примечание"
+\newtheorem{remark}{Замечание}[section]
+\newtheorem*{nonum}{Решение}
+% \newtheorem*{proof}{Доказательство}

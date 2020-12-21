@@ -1,1 +1,18 @@
 \newcommand\blank[1][\textwidth]{\noindent\rule[-.2ex]{#1}{.4pt}}
+
+%%% Theorem styles, definitions, etc.
+\theoremstyle{plain} % Это стиль по умолчанию, его можно не переопределять.
+\newtheorem{thm}{Теорема}
+\newtheorem{prop}{Утверждение}
+\newtheorem{lem}{Лемма}
+ 
+\theoremstyle{definition} % "Определение"
+\newtheorem{cor}{Следствие}
+\newtheorem{propcor}{Следствие}
+\newtheorem{probl}{Задача}
+\newtheorem{defn}{Определение}
+ 
+\theoremstyle{remark} % "Примечание"
+\newtheorem{rem}{Замечание}[section]
+\newtheorem*{nonum}{Решение}
+% \newtheorem*{proof}{Доказательство}
