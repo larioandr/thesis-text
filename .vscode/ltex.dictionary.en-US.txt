@@ -21,3 +21,4 @@ MAP-потоки
 Heindl
 Sakurai
 RFID-считывателей
+MAP-потоками
