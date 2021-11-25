@@ -572,9 +572,9 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ph2.pdf}
+    \includegraphics[width=0.80\textwidth]{chapter4/ch4_ph2.pdf}
   }
-  \caption{PH-распределения, используемые при аппроксимации потоков по двум моментам}
+  \caption{PH-распределения для аппроксимации потоков по двум моментам}
   \label{fig:ch4_ph2}
 \end{figure}
 
@@ -635,9 +635,9 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.7\textwidth]{chapter4/ch4_ph3.pdf}
+    \includegraphics[width=0.6\textwidth]{chapter4/ch4_ph3.pdf}
   }
-  \caption{Ациклическое PH-распределение с двумя состояниями ACPH(2) и гипер-Эрланговское распределение с двумя распределениями Эрланга одинакового порядка, используемые при аппроксимации потоков по трем моментам.}
+  \caption{Ациклическое PH-распределение с двумя состояниями ACPH(2) и гиперэрланговское распределение с двумя цепочками Эрланга одинакового порядка $\text{ME}_\text{n}(2)$, используемые при аппроксимации потоков по трем моментам.}
   \label{fig:ch4_ph3}
 \end{figure}
 
@@ -645,7 +645,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.6\textwidth]{chapter4/ch4_feasible_regions}
+    \includegraphics[width=0.5\textwidth]{chapter4/ch4_feasible_regions}
   }
   \caption{Области существования PH-распределений. Зеленым цветом показана область существования ACPH(2) \cite{Telek2003}, розовым -- произвольных PH-распределений, в частности $\text{ME}_\text{n}(2)$ \cite{Johnson1989}. Ниже линии $\gamma = c - 1/c$ PH-распределений не существует}
   \label{fig:ch4_ph_feasible_regions}
@@ -848,7 +848,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_channel_model_schema}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_channel_model_schema}
   }
   \caption{Схема моделирования каналов беспроводной сети}
   \label{fig:ch4_channel_model_schema}
@@ -867,7 +867,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_network_model_schema}
+    \includegraphics[width=0.8\textwidth]{chapter4/ch4_network_model_schema}
   }
   \caption{Схема моделирования беспроводной сети с произвольным числом станций}
   \label{fig:ch4_network_model_schema}
@@ -893,21 +893,23 @@ $$
 Для проведения численных экспериментов были сгенерированы \hl{2000} входных параметров со случайными средними временами обслуживания, коэффициентами вариации интервалов между пакетами $c_a$ и обслуживания $c_s$, коэффициентами асимметрии поступления $\gamma_a$ и обслуживания $\gamma_s$, коэффициентами автокорреляции входящего потока $\rho_l$, числом узлов в сети и емкостью очередей. Интенсивность (и, соответственно, средний интервал) входящего потока во всех случаях полагалась равной единице, поэтому коэффициент загрузки первого узла был равен $m_s / m_a = m_s$. Границы значений параметров для стандартного генератора показаны в табл.~\ref{tab:ch4_results_approx_input_range}. Отметим, что так как емкости очередей в системе ограничены, и переполняющие очередь пакеты теряются, исследовать системы с коэффициентом загрузки $m_s / m_a > 1$ корректно. Для построения PH-распределений времени обслуживания по выбранным случайным параметрам $m_s, c_s, \gamma_s$ использовались методы, описанные в разделах \ref{sec:ch4_approx_m1}, \ref{sec:ch4_approx_m2} и \ref{sec:ch4_approx_m3}, а для построения MAP-потоков по $m_a \equiv 1, c_a, \gamma_a, \rho_1$ "--- метод из раздела \ref{sec:ch4_approx_m3_lag1}.
 
 \begin{table}[h]
-    \caption{\label{tab:ch4_results_approx_input_range} Граничные значения параметров для исследования методов аппроксимации потоков.}
-    \begin{tabular}{|c|cc|cc|}
-        \hline
-        \multirow{2}{*}{Параметр}
-          &\multicolumn{2}{c|}{Стандартный генератор}&\multicolumn{2}{c|}{Простые распределения}\\
-                        &Мин.   &Макс.    &Мин.   &Макс.\\
-        \hline
-        $m_s$           &0,1       &1,5        &0,1        &1,5\\
-        $c_s$,$c_a$     &0,5       &4,0        &0,5        &4,0\\
-        $\gamma_{a,s}$  &$c_{a,s} - 1/c_{a,s}$ &6.0    &\multicolumn{2}{c|}{Не используется}\\
-        $\rho_1$        &\multicolumn{4}{c|}{Границы рассчитываются как решение задачи \eqref{eq:ch4_approx_map_rho_boundaries}}\\
-        Размер сети $N$ &1          &10        &3           &10\\
-        Емкость очереди $M$ &0      &10        &0           &3\\
-        \hline
-    \end{tabular}
+  \centering
+  \caption{\label{tab:ch4_results_approx_input_range} Граничные значения параметров для исследования методов аппроксимации потоков.}
+  \begin{tabular}{|c|cc|cc|}
+    \hline
+    \multirow{2}{*}{Параметр}
+      &\multicolumn{2}{c|}{Стандартный генератор}&\multicolumn{2}{c|}{Простые распределения}\\
+                    &Мин.   &Макс.    &Мин.   &Макс.\\
+      \hline
+      $m_s$           &0,1       &1,5        &0,1        &1,5\\
+      $c_s$,$c_a$     &0,5       &4,0        &0,5        &4,0\\
+      $\gamma_{a,s}$  &$c_{a,s} - 1/c_{a,s}$ &6.0    &\multicolumn{2}{c|}{Не используется}\\
+    $\rho_1$        &\multicolumn{4}{c|}{Границы рассчитываются как решение задачи
+      \eqref{eq:ch4_approx_map_rho_boundaries}}\\
+    Размер сети $N$ &1          &10        &3           &10\\
+    Емкость очереди $M$ &0      &10        &0           &3\\
+    \hline
+  \end{tabular}
 \end{table}
 
 
@@ -924,7 +926,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_complexity_split}
+    \includegraphics[width=0.8\textwidth]{chapter4/ch4_complexity_split}
   }
   \caption{Разбиение наборов входных данных на простые и сложные}\label{fig:ch4_complexity_split}
 \end{figure}
@@ -933,7 +935,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_input_scatter}
+    \includegraphics[width=0.8\textwidth]{chapter4/ch4_input_scatter}
   }
   \caption{Диаграммы разброса для различных сочетаний параметров в наборах простых входных данных. Размеры кругов соответствуют емкостям очередей}\label{fig:ch4_input_scatter}
 \end{figure}
@@ -960,7 +962,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_scatter_ph1}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_scatter_ph1}
   }
   \caption{Разброс оценок, полученных аппроксимацией потоков экспоненциальным распределением}
   \label{fig:ch4_scatter_ph1}
@@ -970,17 +972,17 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_scatter_ph2}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_scatter_ph2}
   }
   \caption{Разброс оценок, полученных аппроксимацией потоков PH-распределениями по двум моментам}
   \label{fig:ch4_scatter_ph2}
 \end{figure}
 
-Далее, было проведено сравнение с оценками, полученными аппроксимацией потоков с помощью PH-распределений по среднему и коэффициенту вариации (см. рис.~\ref{fig:ch4_scatter_ph2}). Как и в случае с аппроксимацией потоками Пуассона, ошибки при аппроксимации входящего MAP-потока оказались существенно больше ошибок, полученных в случае аппроксимации только выходящих потоков. В то же время отметим, что разброс немного снизился по сравнению с аппроксимациями потоками Пуассона.
+Далее было проведено сравнение с оценками, полученными аппроксимацией потоков с помощью PH-распределений по среднему и коэффициенту вариации (см. рис.~\ref{fig:ch4_scatter_ph2}). Как и в случае с аппроксимацией потоками Пуассона, ошибки при аппроксимации входящего MAP-потока оказались существенно больше ошибок, полученных в случае аппроксимации только выходящих потоков. В то же время отметим, что разброс немного снизился по сравнению с аппроксимациями потоками Пуассона.
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_scatter_ph3}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_scatter_ph3}
   }
   \caption{Разброс оценок, полученных аппроксимацией потоков PH-распределениями по трем моментам}
   \label{fig:ch4_scatter_ph3}
@@ -992,7 +994,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=1.0\textwidth]{chapter4/ch4_scatter_map}
+    \includegraphics[width=0.9\textwidth]{chapter4/ch4_scatter_map}
   }
   \caption{Разброс оценок, полученных аппроксимацией MAP-потоков MAP-потоками по трем моментам и коэффициенту автокорреляции}
   \label{fig:ch4_scatter_map}
@@ -1004,7 +1006,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=1.0\textwidth]{chapter4/ch4_scatter_monte_carlo}
+    \includegraphics[width=0.9\textwidth]{chapter4/ch4_scatter_monte_carlo}
   }
   \caption{Разброс оценок, полученных методом Монте-Карло}
   \label{fig:ch4_scatter_monte_carlo}
@@ -1014,7 +1016,7 @@ $$
 
 \begin{figure}[!h]
   \centerfloat{
-    \includegraphics[width=0.85\textwidth]{chapter4/ch4_approximations_summary}
+    \includegraphics[width=0.80\textwidth]{chapter4/ch4_approximations_summary}
   }
   \legend{На каждом ящике с усами средняя линия соответствует медиане ($Q_2$), нижняя и верхняя границы прямоугольника -- первый ($Q_1$) и третий ($Q_3$) квартили, а границы усов определяются, как наименьшее значение выборки, не меньшее $Q_1 - 1.5 (Q_3 - Q_1)$, и наибольшее значение, не большее $Q_3 + 1.5 (Q_3 - Q_1)$. Точки, лежащие над верхним усом - выбросы.}
   \caption{Точность оценок, полученных с помощью методов аппроксимации потоков и метода Монте-Карло}
@@ -1025,7 +1027,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_departure_autocorr}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_departure_autocorr}
   }
   \caption{Изменение коэффициентов автокорреляции и вариации в выходном потоке для системы MAP/PH/1/M}
   \label{fig:ch4_departure_autocorr}
@@ -1035,7 +1037,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.90\textwidth]{chapter4/ch4_net_departure_autocorr}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_net_departure_autocorr}
   }
   \caption{Изменение коэффициентов автокорреляции и вариации в выходящих потоках на разных узлах сети}
   \label{fig:ch4_net_departure_autocorr}
@@ -1045,7 +1047,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_scatter_monte_carlo_vs_ph3}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_scatter_monte_carlo_vs_ph3}
   }
   \caption{Сравнение оценок, полученных методами Монте-Карло и аппроксимацией только выходящих потоков PH-распределениями по трем моментам}
   \label{fig:ch4_scatter_monte_carlo_vs_ph3}
@@ -1093,7 +1095,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_approximations_elapsed}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_approximations_elapsed}
   }
   \caption{Длительность расчета точного решения, а также расчетов с помощью различных методов аппроксимации выходящих потоков и метода Монте-Карло}
   \label{fig:ch4_approximations_elapsed}
@@ -1103,7 +1105,7 @@ $$
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.95\textwidth]{chapter4/ch4_monte_carlo_performance}
+    \includegraphics[width=0.90\textwidth]{chapter4/ch4_monte_carlo_performance}
   }
   \caption{Сходимость метода Монте-Карло и скорость выполнения расчетов}
   \label{fig:ch4_monte_carlo_performance}
@@ -1149,7 +1151,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ns3_calibration_links_densities}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_calibration_links_densities}
   }
   \caption{Распределение длительностей передач пакетов в каналах калибровочной сети для $\lambda = 500$.}
   \label{fig:ch4_ns3_calibration_links_densities}
@@ -1160,7 +1162,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ns3_calibration_links_koefs}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_calibration_links_koefs}
   }
   \caption{Средние длительности передач, коэффициенты вариации и асимметрии для каналов калибровочной сети.}
   \label{fig:ch4_ns3_calibration_links_koefs}
@@ -1170,7 +1172,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=1.0\textwidth]{chapter4/ch4_ns3_calibration_delays}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_calibration_delays}
   }
   \caption{Межконцевые задержки в калибровочной сети}
   \label{fig:ch4_ns3_calibration_delays}
@@ -1187,7 +1189,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ns3_tandem_delays}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_tandem_delays}
   }
   \caption{Межконцевые задержки в сети из 10 станций, рассчитанные с помощью оригинальной методики}
   \label{fig:ch4_ns3_tandem_delays}
@@ -1197,7 +1199,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ns3_net_10_props}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_net_10_props}
   }
   \caption{Характеристики распределений длительностей передачи пакетов в каналах беспроводной сети из 10 станций}
   \label{fig:ch4_ns3_net_10_props}
@@ -1207,7 +1209,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_network_model_schema_refined}
+    \includegraphics[width=0.8\textwidth]{chapter4/ch4_network_model_schema_refined}
   }
   \caption{Улучшенная схема моделирования беспроводной сети с произвольным числом станций}
   \label{fig:ch4_network_model_schema_refined}
@@ -1217,7 +1219,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ns3_tandem_delays_refined}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_tandem_delays_refined}
   }
   \caption{Межконцевые задержки в сети из 10 станций, рассчитанные с помощью улучшенной методики}
   \label{fig:ch4_ns3_tandem_delays_refined}
@@ -1227,7 +1229,7 @@ CWmax & 1024 & - \\
 
 \begin{figure}[h]
   \centerfloat{
-    \includegraphics[width=0.9\textwidth]{chapter4/ch4_ns3_tandem_errors}
+    \includegraphics[width=0.85\textwidth]{chapter4/ch4_ns3_tandem_errors}
   }
   \caption{Ошибки оценок межконцевых задержек беспроводной сети с помощью моделей сетей массового обслуживания}
   \label{fig:ch4_ns3_tandem_errors}
@@ -1250,4 +1252,3 @@ CWmax & 1024 & - \\
 
 
 \clearpage
-e
