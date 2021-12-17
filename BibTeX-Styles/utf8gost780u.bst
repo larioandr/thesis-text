@@ -535,8 +535,8 @@ FUNCTION {format.names.rev}
       format.name$ 't :=
       nameptr #1 >
         {
-          nameptr #4 =
-          numnames #4 > and
+          nameptr #6 =
+          numnames #6 > and
             { "others" 't :=
               #1 'namesleft := }
             'skip$
