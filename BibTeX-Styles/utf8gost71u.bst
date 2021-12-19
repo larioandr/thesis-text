@@ -691,8 +691,8 @@ FUNCTION {format.names.rev}
       format.name$ 't :=
       nameptr #1 >
         {
-          nameptr #4 =
-          numnames #4 > and
+          nameptr #10 =
+          numnames #10 > and
             { "others" 't :=
               #1 'namesleft := }
             'skip$
@@ -720,7 +720,7 @@ FUNCTION {format.names.rev}
 FUNCTION {format.authors}
 { author empty$
     { "" }
-    { author format.names emphasize}
+    { author format.names}
   if$
 }
 
@@ -1144,7 +1144,7 @@ FUNCTION {article}
   new.slash
   author.after
   new.dblslash
-  journal emphasize "journal" output.check
+  journal "journal" output.check
   new.block
   format.date output
   new.block
